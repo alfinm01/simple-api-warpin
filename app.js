@@ -20,7 +20,7 @@ app.use('/', indexRouter)
 app.use('/message', messageRouter)
 
 // Web socket configuration
-/*const server = app.use('/', (req, res) => {
+const server = app.use('/', (req, res) => {
   res.sendFile(path.resolve('views/index.html'))
 })
   .listen(process.env.PORT || '9000')
@@ -39,7 +39,7 @@ wss.on('connection', (ws) => {
       client.send('Message ' + counter + ': ' + message + '\nReceived on ' + new Date().toTimeString())
     })
   })
-})*/
+})
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {

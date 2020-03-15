@@ -2,17 +2,22 @@
 
 API is accessible on [simple-api-warpin.herokuapp.com](https://simple-api-warpin.herokuapp.com).<br />
 
-OpenAPI documentation for this API can be seen here at [swagger](swagger.com).<br />
+OpenAPI documentation for this API can be seen here at [Swagger Documentation](https://app.swaggerhub.com/apis-docs/alfinm01/simple-api-warpin/1.0.0).<br />
+
+For the websocket API, it's only accessible locally on ws://localhost:9000. The tool I used for testing the websocket API is (Simple Websocket Client)[https://chrome.google.com/webstore/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo/related?hl=en] add-on for Chrome.<br />
 
 This project was bootstrapped with [Express Generator](https://expressjs.com/en/starter/generator.html).
 
 ## Endpoints List
 
 ``` bash
+Available in Heroku
 [GET] '/' = Check if API is live
-[GET] '/get-all-messages' = Get all previously sent messages
-[POST] '/send-message' = Send a new message
-[GET] '/real-time' = Open a long-live connection to display real-time message
+[GET] '/message' = Get all previously sent messages
+[POST] '/message' = Send a new message
+
+Only available in local deployment (ws://localhost:9000)
+[GET] '/' = Open a long-live connection to display real-time message
 ```
 
 ## Available Scripts
