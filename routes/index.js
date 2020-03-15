@@ -1,10 +1,10 @@
 var express = require('express')
 var router = express.Router()
-var pool = require('../db_config')
+var pool = require('../db/db_config')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send('index', { title: 'Express' });
-});
+/* GET index page. */
+router.get('/', function (req, res, next) {
+  res.send('You are connected')
+})
 
-module.exports = router;
+module.exports = router
