@@ -7,29 +7,34 @@ router.get('/get-all-messages', async (req, res) => {
   try {
     const client = await pool.connect()
     const result = await client.query('SELECT * FROM Message;')
-    const results = { results: (result) ? result.rows : null }
+    const results = { data: (result) ? result.rows : null }
     res.send(results)
     client.release()
   } catch (err) {
     console.error(err)
-    res.send('Error: ' + err)
+    res.status(err.status ? err.status : 500)
+    res.send(err)
   }
 })
 
-/* POST new message. */
+/*
+ * POST new message.
+ * @param req in JSON format
+ */
 router.post('/send-message', async (req, res) => {
   try {
     if (!req.body.message) {
-      throw new Error('No message defined')
+      throw new Error({ status: 400, message: 'No message defined' })
     }
     const client = await pool.connect()
-    const result = await client.query('INSERT INTO Price (message, timestamp) VALUES (' + req.body.message + ', \', NOW()) RETURNING *;')
-    const results = { results: (result) ? result.rows : null }
+    const result = await client.query('INSERT INTO Price (message, timestamp) VALUES (\'' + req.body.message + '\', NOW()) RETURNING *;')
+    const results = { data: (result) ? result.rows : null }
     res.send(results)
     client.release()
   } catch (err) {
     console.error(err)
-    res.send('Error: ' + err)
+    res.status(err.status ? err.status : 500)
+    res.send(err)
   }
 })
 
