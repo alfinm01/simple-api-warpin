@@ -4,7 +4,7 @@ API is accessible on [simple-api-warpin.herokuapp.com](https://simple-api-warpin
 
 OpenAPI documentation for this API can be seen here at [Swagger Documentation](https://app.swaggerhub.com/apis-docs/alfinm01/simple-api-warpin/1.0.0).<br />
 
-For the websocket API, it's only accessible locally on ws://localhost:9000. The tool I used for testing the websocket API is (Simple Websocket Client)[https://chrome.google.com/webstore/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo/related?hl=en] add-on for Chrome.<br />
+For the websocket API, it's only accessible locally on <b>ws://localhost:9000</b>. The tool I used for testing the websocket API is [Simple Websocket Client](https://chrome.google.com/webstore/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo/related?hl=en) add-on for Chrome.<br />
 
 This project was bootstrapped with [Express Generator](https://expressjs.com/en/starter/generator.html).
 
