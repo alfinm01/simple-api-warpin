@@ -20,10 +20,10 @@ app.use('/', indexRouter)
 app.use('/message', messageRouter)
 
 // Web socket configuration
-const server = app.use('/', (req, res) => { 
-		res.sendFile(path.resolve('views/index.html')) 
-	})
-	.listen(process.env.PORT || '9000')
+const server = app.use('/', (req, res) => {
+  res.sendFile(path.resolve('views/index.html'))
+})
+  .listen(process.env.PORT || '9000')
 const { Server } = require('ws')
 const wss = new Server({ server }, 'echo-protocol')
 
